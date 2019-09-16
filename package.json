@@ -1,0 +1,31 @@
+{
+  "name": "Flow-SSR-M",
+  "version": "1.0.0",
+  "description":"FLOW 福禄 是新一代电子烟品牌，围绕换弹电子烟、烟弹、一次性电子烟等核心产品，以用户体验为驱动，产品不含焦油、0二手烟、无明火、智能提醒、好抽防水，为烟民提供更优质、更潮流、更多样的生活方式。",
+  "author": "heichenxuan",
+  "keywords": [
+    "FLOW福禄一次性电子烟,FLOW一次性电子烟,怎么去除牙黄牙渍,牙齿上有黄渍怎么办,牙上有黄渍,一次性电子烟,一次性小烟,FLOW福禄电子雾化烟,FLOW电子雾化烟,福禄电子雾化烟,FLOW福禄,一次性小烟,FLOW一次性小烟,福禄一次性小烟,FLOW福禄一次性雾化烟,FLOW一次性雾化烟,FLOW,福禄,flow福禄,flow电子烟,福禄电子烟,flow雾化烟,福禄雾化烟,flow福禄电子烟,flow福禄雾化烟,朱萧木,flow加盟,福禄加盟"
+  ],
+  "private": false,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "core-js": "^2.6.5",
+    "cross-env": "^5.2.0",
+    "koa": "^2.6.2",
+    "nuxt": "^2.4.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
+    "prettier": "1.14.3",
+    "sass-loader": "^7.1.0"
+  }
+}

@@ -1,0 +1,22 @@
+@import '../css/reset.css';
+@import '../css/normalize.css';
+
+$fontSize16: 16px;
+$fontSize18: 18px;
+
+html {
+	font-size: 20px;
+}
+
+body {
+	background: #ededed;
+}
+
+/*
+* Header
+*/
+.app-wrap .header-topbar {
+	width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #dadada82;
+}

@@ -1,0 +1,18 @@
+{
+	"apps": [
+		{
+      "name": "WILD-SSR",
+      "script": "./server/index.js",
+      "env": {
+        "NODE_ENV": "production"
+      },
+			"cwd": "/Project/github/Wild-SSR/",
+			"exec_mode": "cluster",
+			"instances": 2,
+			"watch": false,
+			"ignore_watch": [
+				"node_modules"
+			]
+		}
+	]
+}
