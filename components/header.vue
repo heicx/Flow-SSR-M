@@ -114,8 +114,8 @@ export default {
   },
   methods: {
     changeSubMenu: function(items) {
-      console.log(this.$route.name)
       const name = items[0];
+      
       if (name !== this.subItemName) {
         this.subItemName = items[0];
       } else {
@@ -215,8 +215,6 @@ export default {
   background: #1a1a1a;
   color: #fff;
   font-size: .6rem;
-  border-bottom: 1px solid #dadbde;
-  box-shadow: 0px 4px 12px -6px #ccc;
   z-index: 25;
   &.active {
     transform: translate3d(0, 0, 0);

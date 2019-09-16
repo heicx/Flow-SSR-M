@@ -39,15 +39,17 @@ export default {
       title: 'FLOW 福禄 多口味烟弹 - FLOW 福禄'
     }
   },
-  mounted() {
+  mounted () {
+    Bus.$emit('fixBottom', true);
   },
   methods: {
     buy () {
       Bus.$emit('openModal', true, this.shopLink);
     }
   },
-  components: {
-  },
+  destroyed () {
+    Bus.$emit('fixBottom', false);
+  }
 }
 </script>
 
@@ -56,9 +58,6 @@ export default {
   font-size: 0;
   img {
     width: 100%;
-    &:last-child {
-      padding-bottom: 2.5rem;
-    }
   }
 }
 

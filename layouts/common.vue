@@ -3,11 +3,13 @@
     <app-header></app-header>
     <shop-modal v-if="isVisible" :shopLink="shopLink"></shop-modal>
     <nuxt />
+    <app-footer></app-footer>
 	</div>
 </template>
 
 <script>
 import appHeader from '../components/header.vue';
+import appFooter from '../components/footer.vue';
 import shopModal from '../components/shopModal.vue';
 import Bus from '../assets/bus';
 
@@ -30,6 +32,7 @@ export default {
   },
   components: {
     appHeader,
+    appFooter,
     shopModal
   },
 }

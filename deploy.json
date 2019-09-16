@@ -1,12 +1,12 @@
 {
 	"apps": [
 		{
-      "name": "WILD-SSR",
+      "name": "Flow-SSR-M",
       "script": "./server/index.js",
       "env": {
         "NODE_ENV": "production"
       },
-			"cwd": "/Project/github/Wild-SSR/",
+			"cwd": "/Project/github/Flow-SSR-M/",
 			"exec_mode": "cluster",
 			"instances": 2,
 			"watch": false,

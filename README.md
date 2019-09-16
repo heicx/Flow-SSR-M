@@ -1,6 +1,6 @@
-# WILD-SSR
+# FLOW-SSR-M
 
-> WILD-SSR
+> FLOW-SSR-M
 
 ## Build Setup
 
