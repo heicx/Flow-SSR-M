@@ -6,22 +6,22 @@
     <div class="mini-flow">
       <img src="../../assets/images/home/home-img-3@3x.jpg" alt="FLOW 福禄小彩蛋，新一代一次性电子烟" />
       <div class="item-button">
-        <router-link to="/cn/mini-flow"></router-link>
-        <a href=""></a>
+        <router-link to="/cn/mini-flow" tag="div"></router-link>
+        <div @click="buy('mini-flow')"></div>
       </div>
     </div>
     <div class="flow">
       <img src="../../assets/images/home/home-img-4@3x.jpg" alt="FLOW 福禄 换弹电子烟" />
       <div class="item-button">
-        <router-link to="/cn/flow"></router-link>
-        <a href=""></a>
+        <router-link to="/cn/flow" tag="div"></router-link>
+        <div @click="buy('flow')"></div>
       </div>
     </div>
     <div class="flow-pod">
       <img src="../../assets/images/home/home-img-5@3x.jpg" alt="FLOW 福禄 多口味烟弹" />
       <div class="item-button">
-        <router-link to="/cn/flow-pod"></router-link>
-        <a href=""></a>
+        <router-link to="/cn/flow-pod" tag="div"></router-link>
+        <div @click="buy('flow-pod')"></div>
       </div>
     </div>
     <img src="../../assets/images/home/home-img-6@3x.jpg" alt="提神、无烟味、呵护身边人健康" />
@@ -35,10 +35,29 @@
 </template>
 
 <script>
+import Bus from '../../assets/bus';
+
 export default {
   layout: 'common',
   data() {
     return {
+      shopLink: {
+        'mini-flow': {
+          jd: 'https://item.m.jd.com/product/50859298422.html?sceneval=2',
+          tmall: 'https://detail.m.tmall.com/item.htm?id=596627570708&spm=a2141.7631565.banner_21899561574.1',
+          youzan: 'https://shop42452657.youzan.com/v2/goods/3epdb5p28amix'
+        },
+        'flow': {
+          jd: 'https://item.m.jd.com/product/46941161551.html?sceneval=2',
+          tmall: 'https://detail.m.tmall.com/item.htm?id=595809481459&spm=a2141.7631565.banner_21899561574.0',
+          youzan: 'https://shop42452657.youzan.com/v2/goods/361p67jx1rjih'
+        },
+        'flow-pod': {
+          jd: 'https://item.m.jd.com/product/46945441308.html?sceneval=2',
+          tmall: 'https://detail.m.tmall.com/item.htm?id=598023226078&spm=a2141.7631565.banner_21899561574.2',
+          youzan: 'https://shop42452657.youzan.com/v2/goods/3nmwjsj5apwrt'
+        },
+      }
     }
   },
   head () {
@@ -49,6 +68,9 @@ export default {
   mounted() {
   },
   methods: {
+    buy (key) {
+      Bus.$emit('openModal', true, this.shopLink[key]);
+    }
   },
   components: {
   },
@@ -74,7 +96,7 @@ export default {
       height: 2.1rem;
       left: 50%;
       transform: translate(-50%);
-      a {
+      div {
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
