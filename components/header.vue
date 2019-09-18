@@ -17,22 +17,25 @@
         v-for="(item, index) in list"
         :key="index"
         :class='{"curr-on": item.alias.path.indexOf($route.name) > -1 }'
-        @click="changeMenu(item.alias.subItems, item.link)"
       >
-        <div class="item-name" v-if="!item.alias.subItems">
+        <div
+          class="item-name"
+          v-if="!item.alias.subItems"
+          @click="changeMenu(item.alias.subItems, item.link)"
+        >
           {{item.name}}
         </div>
         <div v-else>
           <div
-            class="item-name"
-            :class="{'active': item.alias.subItems.indexOf(subItemName) > -1}"
+            class="item-name sub-items"
+            :class="{'active': item.alias.path.indexOf(subItemPath) > -1}"
             @click="changeSubMenu(item.alias.subItems)"
           >
             {{item.name}}
           </div>
           <ul
             class="sub-item-list"
-            :class="{'active': item.alias.subItems.indexOf(subItemName) > -1}"
+            :class="{'active': item.alias.path.indexOf(subItemPath) > -1}"
           >
             <li
               v-for="(subItem, index) in item.alias.subItems"
@@ -40,7 +43,7 @@
               class="sub-item-name"
               :class='
                   {
-                    "curr-on": subItem.path.indexOf === $route.name,
+                    "curr-on": subItem.path === $route.name,
                     "mini-flow": subItem.path === "cn-mini-flow",
                     "flow": subItem.path === "cn-flow",
                     "flow-pod": subItem.path === "cn-flow-pod",
@@ -64,7 +67,7 @@ import Bus from '../assets/bus';
 export default {
 	data() {
 		return {
-      subItemName: '',
+      subItemPath: '',
       showMenu: false,
 			list: [
 				{
@@ -98,6 +101,24 @@ export default {
           },
         },
         {
+					name: '招商加盟',
+					alias: {
+            path: ['cn-investment', 'cn-entityshop'],
+            subItems: [
+              {
+                name: '经销商合作',
+                link: '/cn/investment',
+                path: 'cn-investment',
+              },
+              {
+                name: '专卖店加盟',
+                link: '/cn/entityshop',
+                path: 'cn-entityshop',
+              },
+            ],
+          },
+        },
+        {
 					name: '减害安全',
 					alias: {
             path: 'cn-effect',
@@ -114,15 +135,17 @@ export default {
   },
   methods: {
     changeSubMenu: function(items) {
-      const name = items[0];
+      const path = items[0].path;
       
-      if (name !== this.subItemName) {
-        this.subItemName = items[0];
+      if (path !== this.subItemPath) {
+        this.subItemPath = items[0].path;
       } else {
-        this.subItemName = '';
+        this.subItemPath = '';
       }
     },
     changeMenu: function(items, link) {
+      this.subItemPath = '';
+
       if (!items) {
         this.showMenu = !this.showMenu;
       }
@@ -274,7 +297,7 @@ export default {
   }
 
   .item-name {
-    &:after {
+    &.sub-items:after {
       position: absolute;
       content: '';
       width: .24rem;
@@ -285,7 +308,7 @@ export default {
       background: url(~assets/images/header/arrow@3x.png) center no-repeat;
       background-size: 100%;
     }
-    &.active {
+    &.sub-items.active {
       &:after {
         transform: translate(0, -50%) rotate(90deg);
       }
@@ -295,7 +318,6 @@ export default {
   .sub-item-list {
     height: 0px;
     opacity: 0;
-    transition: all .12s ease-in-out;
     border-bottom: 1px solid #464646;
     >li {
       width: 100%;
