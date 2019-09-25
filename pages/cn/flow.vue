@@ -26,7 +26,7 @@ import Bus from '../../assets/bus';
 
 export default {
   layout: 'common',
-  data() {
+  data () {
     return {
       shopLink: {
         jd: 'https://item.m.jd.com/product/46941161551.html?sceneval=2',
@@ -41,6 +41,7 @@ export default {
     }
   },
   mounted () {
+    Bus.$emit('showTips', true);
     Bus.$emit('fixBottom', true);
   },
   methods: {

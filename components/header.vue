@@ -1,7 +1,7 @@
 <template>
 	<div class="header-topbar-wrap">
 		<header class="topbar">
-      <router-link class="logo" to="/cn"></router-link>
+      <router-link class="logo" to="/cn" tag="span"></router-link>
       <i 
         class="menu-btn"
         @click="changeMenu()"
@@ -45,7 +45,7 @@
                   {
                     "curr-on": subItem.path === $route.name,
                     "mini-flow": subItem.path === "cn-mini-flow",
-                    "flow": subItem.path === "cn-flow",
+                    "flow": ["cn-flow", "cn-flow-s"].indexOf(subItem.path) > -1,
                     "flow-pod": subItem.path === "cn-flow-pod",
                   }
                 '
@@ -57,7 +57,8 @@
         </div>
       </li>
     </ul>
-    <div class="tips"></div>
+    <!-- <div class="tips" v-if="showTips"></div> -->
+    <slot name='header-tips'></slot>
 	</div>
 </template>
 
@@ -67,6 +68,10 @@ import Bus from '../assets/bus';
 export default {
 	data() {
 		return {
+      showTips: {
+        type: Boolean,
+        default: false
+      },
       subItemPath: '',
       showMenu: false,
 			list: [
@@ -80,12 +85,17 @@ export default {
 				{
 					name: '产品',
 					alias: {
-            path: ['cn-mini-flow', 'cn-flow', 'cn-flow-pod'],
+            path: ['cn-mini-flow', 'cn-flow-s', 'cn-flow', 'cn-flow-pod'],
             subItems: [
               {
                 name: '小彩蛋（一次性电子烟）',
                 link: '/cn/mini-flow',
                 path: 'cn-mini-flow',
+              },
+              {
+                name: '换弹电子烟 S',
+                link: '/cn/flow-s',
+                path: 'cn-flow-s',
               },
               {
                 name: '换弹电子烟',
@@ -100,6 +110,13 @@ export default {
             ],
           },
         },
+        // {
+				// 	name: '线下活动',
+				// 	alias: {
+        //     path: 'cn-activity',
+        //   },
+        //   link: '/cn/activity/recent'
+				// },
         {
 					name: '招商加盟',
 					alias: {
@@ -133,6 +150,8 @@ export default {
       }
 		}
   },
+  created () {
+  },
   methods: {
     changeSubMenu: function(items) {
       const path = items[0].path;
@@ -156,7 +175,7 @@ export default {
     },
     openShopModal () {
       Bus.$emit('openModal', true, this.shopLink);
-    }
+    },
   }
 }
 </script>
@@ -258,7 +277,7 @@ export default {
     height: 2.3rem;
     line-height: 2.3rem;
     border-bottom: 1px solid #464646;
-    &.mini-flow, &.flow, &.flow-pod {
+    &.mini-flow, &.flow-s, &.flow, &.flow-pod {
       padding-left: 1.5rem;
     }
     &.mini-flow:before {

@@ -40,6 +40,7 @@ export default {
     }
   },
   mounted () {
+    Bus.$emit('showTips', true);
     Bus.$emit('fixBottom', true);
   },
   methods: {

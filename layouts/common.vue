@@ -1,6 +1,10 @@
 <template>
   <div id="app" class="app-wrap" :class="{'cover': isVisible}">
-    <app-header></app-header>
+    <app-header>
+      <template v-slot:header-tips v-if="showTips">
+        <div class="tips"></div>
+      </template>
+    </app-header>
     <shop-modal v-if="isVisible" :shopLink="shopLink"></shop-modal>
     <nuxt />
     <app-footer></app-footer>
@@ -16,6 +20,7 @@ import Bus from '../assets/bus';
 export default {
   data() {
     return {
+      showTips: false,
       shopLink: {},
       isVisible: false
     }
@@ -23,6 +28,10 @@ export default {
   computed: {
   },
   created() {
+    Bus.$on('showTips', status => {
+      this.showTips = status;
+    });
+
     Bus.$on('openModal', (status, links) => {
       links && (this.shopLink = links);
       this.isVisible = status;

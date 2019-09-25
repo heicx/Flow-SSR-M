@@ -10,26 +10,33 @@
         <div @click="buy('mini-flow')"></div>
       </div>
     </div>
+    <div class="flow-s">
+      <img src="../../assets/images/home/home-img-4@3x.jpg" alt="FLOW 福禄 换弹电子烟 S，超长续航，一体化金属机身，多种好味道，好抽防水" />
+      <div class="item-button">
+        <router-link to="/cn/flow-s" tag="div"></router-link>
+        <div @click="buy('flow-s')"></div>
+      </div>
+    </div>
     <div class="flow">
-      <img src="../../assets/images/home/home-img-4@3x.jpg" alt="FLOW 福禄 换弹电子烟" />
+      <img src="../../assets/images/home/home-img-5@3x.jpg" alt="FLOW 福禄 换弹电子烟" />
       <div class="item-button">
         <router-link to="/cn/flow" tag="div"></router-link>
         <div @click="buy('flow')"></div>
       </div>
     </div>
     <div class="flow-pod">
-      <img src="../../assets/images/home/home-img-5@3x.jpg" alt="FLOW 福禄 多口味烟弹" />
+      <img src="../../assets/images/home/home-img-6@3x.jpg" alt="FLOW 福禄 多口味烟弹" />
       <div class="item-button">
         <router-link to="/cn/flow-pod" tag="div"></router-link>
         <div @click="buy('flow-pod')"></div>
       </div>
     </div>
-    <img src="../../assets/images/home/home-img-6@3x.jpg" alt="提神、无烟味、呵护身边人健康" />
-    <img src="../../assets/images/home/home-img-7@3x.jpg" alt="无焦油、无留味、呵护家人健康" />
-    <img src="../../assets/images/home/home-img-8@3x.jpg" alt="提神、无火、无烟灰" />
-    <img src="../../assets/images/home/home-img-9@3x.jpg" alt="放松、无火、防水" />
-    <img src="../../assets/images/home/home-img-10@3x.jpg" alt="提神、无火、无残留异味" />
-    <img src="../../assets/images/home/home-img-11@3x.png" alt="未成年人购买提醒" />
+    <img src="../../assets/images/home/home-img-7@3x.jpg" alt="提神、无烟味、呵护身边人健康" />
+    <img src="../../assets/images/home/home-img-8@3x.jpg" alt="无焦油、无留味、呵护家人健康" />
+    <img src="../../assets/images/home/home-img-9@3x.jpg" alt="提神、无火、无烟灰" />
+    <img src="../../assets/images/home/home-img-10@3x.jpg" alt="放松、无火、防水" />
+    <img src="../../assets/images/home/home-img-11@3x.jpg" alt="提神、无火、无残留异味" />
+    <img src="../../assets/images/home/home-img-12@3x.png" alt="未成年人购买提醒" />
   </div>
 </div>
 </template>
@@ -39,13 +46,18 @@ import Bus from '../../assets/bus';
 
 export default {
   layout: 'common',
-  data() {
+  data () {
     return {
       shopLink: {
         'mini-flow': {
           jd: 'https://item.m.jd.com/product/50859298422.html?sceneval=2',
           tmall: 'https://detail.m.tmall.com/item.htm?id=596627570708&spm=a2141.7631565.banner_21899561574.1',
           youzan: 'https://shop42452657.youzan.com/v2/goods/3epdb5p28amix'
+        },
+        'flow-s': {
+          jd: 'https://item.m.jd.com/product/100008068016.html?sceneval=2',
+          tmall: 'https://detail.m.tmall.com/item.htm?id=602283944832&spm=a2141.7631565.banner_21899561574.1',
+          youzan: 'https://shop42452657.youzan.com/v2/showcase/goods?alias=2ompse0rdtg7d&banner_id=f.79556578~image_ad.4~1~sVpWi6OU&index=0&reft=1568863732444&spm=f.79556578'
         },
         'flow': {
           jd: 'https://item.m.jd.com/product/46941161551.html?sceneval=2',
@@ -65,14 +77,13 @@ export default {
       title: 'FLOW 福禄 电子雾化烟 - FLOW 福禄'
     }
   },
-  mounted() {
+  created () {
+    Bus.$emit('showTips', true);
   },
   methods: {
     buy (key) {
       Bus.$emit('openModal', true, this.shopLink[key]);
     }
-  },
-  components: {
   },
 }
 </script>
@@ -86,7 +97,7 @@ export default {
   img {
     width: 100%;
   }
-  .mini-flow, .flow, .flow-pod {
+  .mini-flow, .flow-s, .flow, .flow-pod {
     position: relative;
   }
   .item-button {

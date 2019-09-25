@@ -23,7 +23,7 @@ import Bus from '../../assets/bus';
 
 export default {
   layout: 'common',
-  data() {
+  data () {
     return {
     }
   },
@@ -33,6 +33,7 @@ export default {
     }
   },
   mounted () {
+    Bus.$emit('showTips', true);
     Bus.$emit('fixBottom', true);
   },
   methods: {

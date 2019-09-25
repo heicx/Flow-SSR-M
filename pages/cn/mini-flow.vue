@@ -34,12 +34,11 @@ export default {
   },
   head () {
     return {
-      title: '减害安全 - FLOW 福禄'
+      title: 'FLOW 福禄小彩蛋 - FLOW 福禄'
     }
   },
-  created () {
-  },
   mounted () {
+    Bus.$emit('showTips', true);
     Bus.$emit('fixBottom', true);
   },
   methods: {

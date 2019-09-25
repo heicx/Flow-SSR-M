@@ -10,22 +10,17 @@
 </template>
 
 <script>
+import Bus from '../../assets/bus';
+
 export default {
   layout: 'common',
-  data() {
-    return {
-    }
-  },
   head () {
     return {
       title: '减害安全 - FLOW 福禄'
     }
   },
   mounted() {
-  },
-  methods: {
-  },
-  components: {
+    Bus.$emit('showTips', true);
   },
 }
 </script>

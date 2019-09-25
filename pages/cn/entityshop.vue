@@ -22,19 +22,14 @@ import Bus from '../../assets/bus';
 
 export default {
   layout: 'common',
-  data() {
-    return {
-    }
-  },
   head () {
     return {
       title: '专卖店加盟 - FLOW 福禄'
     }
   },
   mounted () {
+    Bus.$emit('showTips', true);
     Bus.$emit('fixBottom', true);
-  },
-  methods: {
   },
   destroyed () {
     Bus.$emit('fixBottom', false);

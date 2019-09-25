@@ -21,8 +21,15 @@
         <h3>京 ICP 备 19005651 号 - 1</h3>
         <h3>京公网安备 11010502037227 号</h3>
       </li>
+      <li class="integrity">
+        <a href="https://credit.cecc-cx.com/credit/verifyseal.php?sn=2008070300100000031&ct=df&pa=294096" target="_blank">
+          <img src="../assets/images/footer/integrity@3x.png" alt="诚信认证">
+        </a>
+      </li>
     </ul>
-    <img :class="{'bottom': hasBottom}" src="../assets/images/footer/footer-img-12@3x.png" />
+    <div class="footer-logo">
+      <img :class="{'bottom': hasBottom}" src="../assets/images/footer/footer-img-12@3x.png" />
+    </div>
   </div>
 </template>
 
@@ -48,6 +55,7 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
+  margin-top: -.05rem;
   background: #1a1a1a;
   padding: 2.5rem 0;
   li {
@@ -60,12 +68,15 @@ export default {
       font-size: .6rem;
       line-height: 1.6;
     }
+    &.integrity img {
+      width: 4rem;
+    }
     &:last-child {
       margin-bottom: 0;
     }
   }
 }
-.footer-wrap {
+.footer-wrap .footer-logo {
   img {
     width: 100%;
     &.bottom {
