@@ -70,6 +70,7 @@ export default {
     }
     &.integrity img {
       width: 4rem;
+      border-radius: 2px;
     }
     &:last-child {
       margin-bottom: 0;
