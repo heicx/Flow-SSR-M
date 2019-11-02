@@ -6,29 +6,29 @@
     <div class="mini-flow">
       <img src="../../assets/images/home/home-img-3@3x.jpg" alt="FLOW 福禄小彩蛋，新一代一次性电子烟" />
       <div class="item-button">
-        <router-link to="/cn/mini-flow" tag="div"></router-link>
-        <div @click="buy('mini-flow')"></div>
+        <router-link to="/cn/mini-flow" tag="div">进一步了解</router-link>
+        <!-- <div @click="buy('mini-flow')"></div> -->
       </div>
     </div>
     <div class="flow-s">
       <img src="../../assets/images/home/home-img-4@3x.jpg" alt="FLOW 福禄 换弹电子烟 S，超长续航，一体化金属机身，多种好味道，好抽防水" />
       <div class="item-button">
-        <router-link to="/cn/flow-s" tag="div"></router-link>
-        <div @click="buy('flow-s')"></div>
+        <router-link to="/cn/flow-s" tag="div">进一步了解</router-link>
+        <!-- <div @click="buy('flow-s')"></div> -->
       </div>
     </div>
     <div class="flow">
       <img src="../../assets/images/home/home-img-5@3x.jpg" alt="FLOW 福禄 换弹电子烟" />
       <div class="item-button">
-        <router-link to="/cn/flow" tag="div"></router-link>
-        <div @click="buy('flow')"></div>
+        <router-link to="/cn/flow" tag="div">进一步了解</router-link>
+        <!-- <div @click="buy('flow')"></div> -->
       </div>
     </div>
     <div class="flow-pod">
       <img src="../../assets/images/home/home-img-6@3x.jpg" alt="FLOW 福禄 多口味烟弹" />
       <div class="item-button">
-        <router-link to="/cn/flow-pod" tag="div"></router-link>
-        <div @click="buy('flow-pod')"></div>
+        <router-link to="/cn/flow-pod" tag="div">进一步了解</router-link>
+        <!-- <div @click="buy('flow-pod')"></div> -->
       </div>
     </div>
     <img src="../../assets/images/home/home-img-7@3x.jpg" alt="提神、无烟味、呵护身边人健康" />
@@ -102,21 +102,21 @@ export default {
   }
   .item-button {
       position: absolute;
-      bottom: 10.5%;
-      width: 90%;
-      height: 2.1rem;
+      bottom: 8%;
+      width: 9rem;
+      height: 2.8rem;
+      background: #5f69ef;
+      transform: translateX(-50%);
       left: 50%;
-      transform: translate(-50%);
+      border-radius: 12px;
       div {
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        height: 2.1rem;
-        float: left;
-        width: 47%;
-        &:last-child {
-          float: right;
-        }
+        font-size: 18px;
+        color: #fff;
+        font-weight: bold;
+        line-height: 2.8rem;
+        text-align: center;
+        width: 100%;
+        height: 100%;
       }
     }
 }

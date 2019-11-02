@@ -17,7 +17,7 @@
     <img src="../../assets/images/flow/flow-img-14@3x.jpg" alt="FLOW 福禄 安全性说明" />
     <img src="../../assets/images/flow/flow-img-15@3x.jpg" alt="未成年人禁用提醒" />
   </div>
-  <div class="buy-btn" @click="buy()">立即购买</div>
+  <!-- <div class="buy-btn" @click="buy()">立即购买</div> -->
 </div>
 </template>
 

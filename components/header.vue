@@ -7,7 +7,7 @@
         @click="changeMenu()"
       >
       </i>
-      <div class="buy-btn" @click="openShopModal()">商城</div>
+      <!-- <div class="buy-btn" @click="openShopModal()">商城</div> -->
 		</header>
     <ul
       class="menu-list"

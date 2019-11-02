@@ -14,7 +14,7 @@
     <img src="../../assets/images/flow-s/flow-s-img-11@3x.jpg" alt="FLOW 福禄 换弹电子烟套装 S" />
     <img src="../../assets/images/flow-s/flow-s-img-12@3x.jpg" alt="人气口味 白桃乌龙茶，成为套装自带口味烟弹" />
   </div>
-  <div class="buy-btn" @click="buy()">立即购买</div>
+  <!-- <div class="buy-btn" @click="buy()">立即购买</div> -->
 </div>
 </template>
 

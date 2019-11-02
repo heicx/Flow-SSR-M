@@ -14,7 +14,7 @@
     <img src="../../assets/images/mini-flow/mini-flow-img-11@3x.jpg" alt="烘焙烟草，清凉薄荷" />
     <img src="../../assets/images/mini-flow/mini-flow-img-12@3x.jpg" alt="冰镇可乐，全新包装，一撕即开，全新口味，所见即所得" />
   </div>
-  <div class="buy-btn" @click="buy()">立即购买</div>
+  <!-- <div class="buy-btn" @click="buy()">立即购买</div> -->
 </div>
 </template>
 
