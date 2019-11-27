@@ -38,6 +38,9 @@
     <img src="../../assets/images/home/home-img-11@3x.jpg" alt="提神、无火、无残留异味" />
     <img src="../../assets/images/home/home-img-12@3x.png" alt="未成年人购买提醒" />
   </div>
+  <router-link class="home-official-btn" to="/cn/official" tag="div">
+    <img src="../../assets/images/home/home-official-btn@3x.png" alt="点击查看如何购买商品" />
+  </router-link>
 </div>
 </template>
 
@@ -101,23 +104,32 @@ export default {
     position: relative;
   }
   .item-button {
-      position: absolute;
-      bottom: 8%;
-      width: 9rem;
-      height: 2.8rem;
-      background: #5f69ef;
-      transform: translateX(-50%);
-      left: 50%;
-      border-radius: 12px;
-      div {
-        font-size: 18px;
-        color: #fff;
-        font-weight: bold;
-        line-height: 2.8rem;
-        text-align: center;
-        width: 100%;
-        height: 100%;
-      }
+    position: absolute;
+    bottom: 8%;
+    width: 9rem;
+    height: 2.8rem;
+    background: #5f69ef;
+    transform: translateX(-50%);
+    left: 50%;
+    border-radius: 12px;
+    div {
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+      line-height: 2.8rem;
+      text-align: center;
+      width: 100%;
+      height: 100%;
     }
+  }
+}
+.home-wrap .home-official-btn {
+  position: fixed;
+  bottom: 0;
+  font-size: 0px;
+  img {
+    width: 100%;
+    cursor: pointer;
+  }
 }
 </style>
