@@ -53,6 +53,13 @@
             >
               {{subItem.name}}
             </li>
+
+            <li 
+              v-if="item.eName === 'entityshop'" @click="openLink('https://www.wjx.cn/jq/53047966.aspx')"
+              class="sub-item-name"
+            >
+              贩卖机申请
+            </li>
           </ul>
         </div>
       </li>
@@ -119,6 +126,7 @@ export default {
 				// },
         {
 					name: '招商加盟',
+          eName: 'entityshop',
 					alias: {
             path: ['cn-investment', 'cn-entityshop'],
             subItems: [
@@ -153,6 +161,10 @@ export default {
   created () {
   },
   methods: {
+    openLink: function (link) {
+      window.open(link, '_blank');
+      this.showMenu = !this.showMenu;
+    },
     changeSubMenu: function(items) {
       const path = items[0].path;
       
